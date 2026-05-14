@@ -1,0 +1,99 @@
+/* --- VARIABLES GLOBALES --- */
+:root {
+    --bg-dark: #0f172a;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --bg-sidebar: #1e293b;
+    --accent-info: #38bdf8;
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+html {
+    scroll-behavior: smooth;
+}
+body { 
+    font-family: var(--font-main); 
+    color: #f8f9fa; 
+    background-color: var(--bg-dark); 
+    margin: 0;
+}
+
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.font-mono { font-family: var(--font-mono); }
+
+.project-card, .project-card-custom { 
+    background: var(--bg-card); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    color: white;
+    border-radius: 12px;
+}
+
+.project-card:hover, .project-card-custom:hover { 
+    transform: translateY(-10px); 
+    background: rgba(255, 255, 255, 0.1); 
+    border-color: var(--accent-info);
+}
+
+.hover-opacity-100:hover { 
+    opacity: 1 !important; 
+    transition: opacity 0.3s ease; 
+}
+
+
+.hero-section { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+
+#indexcanvas { 
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    z-index: -1; 
+    opacity: 0.4; 
+    pointer-events: none; 
+}
+.content-wrapper { position: relative; z-index: 2; }
+
+.typewriter {
+  font-family: monospace; /* Queda mejor con tipografías fijas */
+  overflow: hidden; /* Esconde el texto que aún no se "escribió" */
+  border-right: .15em solid orange; /* El cursor */
+  white-space: nowrap; /* Mantiene todo en una sola línea */
+  margin: 0 auto; 
+  letter-spacing: .10em; 
+  
+  /* Animaciones: typing (escribir) y blink (cursor parpadeando) */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+@media (max-width: 768px) {
+    .typewriter {
+        white-space: normal; /* Permite que el texto baje a la siguiente línea */
+        border-right: none;  /* Quitamos el cursor porque queda raro si hay varias líneas */
+        animation: none;     /* Opcional: quitamos la animación para que sea legible al toque */
+        overflow: visible;
+        width: 100% !important;
+        animation: 
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+    }
+}
+/* El efecto de escribir: expande el ancho de 0 a 100% */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* El parpadeo del cursor */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}

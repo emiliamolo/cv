@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio de Emilia Moloeznik - Estudiante de Ciencias de la Computación. Proyectos de software, simulaciones algorítmicas y programación funcional.">
+    <meta name="keywords"
+        content="Computer Science, Software Engineer, Portfolio, Haskell, Python, Algorithms, Rosario">
+    <meta property="og:title" content="Emilia Moloeznik | Portfolio">
+    <meta property="og:description" content="Explora mis proyectos de computación y experimentos algorítmicos.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Emilia Moloeznik | Portfolio</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <canvas id="indexcanvas"></canvas>
+
+    <div class="content-wrapper">
+        <section class="hero-section">
+            <div>
+                <h1 class="display-2 fw-bold font-mono">Emilia Moloeznik</h1>
+                <p class="lead opacity-75 typewriter">Estudiante de Ciencias de la Computación | Desarrolladora de Software</p>
+                <a href="#proyectos" class="btn btn-outline-light mt-3 px-4 py-2 me-2">Ver mis proyectos</a>
+                <a href="CV_Emilia_Moloeznik.pdf" download="CV_Emilia_Moloeznik.pdf"
+                    class="btn btn-info mt-3 px-4 py-2 text-dark fw-bold">Descargar CV <i
+                        class="bi bi-download"></i></a>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="container py-5">
+            <h2 class="mb-4 font-mono border-bottom pb-2">/sobre_mí</h2>
+                <p class="lead">
+                    Estudiante de la Licenciatura en Ciencias de la Computación en la FCEIA, UNR.
+                    Cuento con una base sólida en programación, algoritmos, estructuras de datos y sistemas. Participo en proyectos de desarrollo de software, gestión de bases de datos y entornos Linux.
+                </p>
+        </section>
+
+        <section id="proyectos" class="container py-5">
+            <h2 class="mb-5 font-mono border-bottom pb-2">/proyectos_principales</h2>
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 project-card p-3 border-info border-opacity-25"
+                        style="background: rgba(56, 189, 248, 0.03);">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-info">MiMenu</h5>
+                            <p class="card-text opacity-75">Plataforma web para gestión de recetas y planificación de
+                                comidas.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary opacity-75">Flask</span>
+                                <span class="badge bg-secondary opacity-75">SQLite</span>
+                                <span class="badge bg-secondary opacity-75">Render</span>
+                            </div>
+                            <a href="https://github.com/emiliamolo/menu-semanal"
+                                class="text-info text-decoration-none fw-bold">Ver Repo →</a></br>
+                            <a href="https://menu-semanal-3psp.onrender.com/"
+                                class="text-info text-decoration-none fw-bold">Ver Demo →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 project-card p-3 border-info border-opacity-25"
+                        style="background: rgba(56, 189, 248, 0.03);">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-info">Prolog DSL</h5>
+                            <p class="card-text opacity-75">Intérprete de subconjunto de Prolog implementado en Haskell.
+                                Soporta resolución por SLD y unificación.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary opacity-75">Haskell</span>
+                                <span class="badge bg-secondary opacity-75">Functional Programming</span>
+                                <span class="badge bg-secondary opacity-75">Logic</span>
+                            </div>
+                            <a href="https://github.com/emiliamolo/alp-tp-prolog"
+                                class="text-info text-decoration-none fw-bold">Ver Repo →</a><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 project-card p-3 border-info border-opacity-25"
+                        style="background: rgba(56, 189, 248, 0.03);">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-info">Algorithmic Lab & Visualizations</h5>
+                            <p class="card-text opacity-75">Un espacio interactivo que agrupa implementaciones de
+                                algoritmos clásicos, simulaciones físicas y teoría de juegos.</p>
+
+                            <div class="mb-3 d-flex flex-wrap gap-1">
+                                <span class="badge bg-secondary opacity-75">Canvas API</span>
+                                <span class="badge bg-secondary opacity-75">Autómatas Celulares</span>
+                                <span class="badge bg-secondary opacity-75">Teoría de Juegos</span>
+                            </div>
+
+                            <a href="proyectos/laboratorio/laboratorio.html"
+                                class="text-info text-decoration-none fw-bold">Explorar Experimentos →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 project-card p-3 border-info border-opacity-25"
+                        style="background: rgba(56, 189, 248, 0.03);">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-info">Sistemas Operativos: P2P Network</h5>
+                            <p class="card-text opacity-75">Implementación de una red Peer-to-Peer para transferencia de
+                                archivos distribuida.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary opacity-75">C</span>
+                                <span class="badge bg-secondary opacity-75">Sockets</span>
+                                <span class="badge bg-secondary opacity-75">Concurrency</span>
+                            </div>
+                            <a href="https://github.com/SOI-TP-Final/p2p-system"
+                                class="text-info text-decoration-none fw-bold">Ver Repo →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 project-card p-3 border-info border-opacity-25"
+                        style="background: rgba(56, 189, 248, 0.03);">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-info">LCC: Proyectos de Carrera</h5>
+                            <p class="card-text opacity-75">Colección de implementaciones académicas.</p>
+                            <div class="mb-3 d-flex flex-wrap gap-1">
+                                <span class="badge bg-secondary opacity-75">C</span>
+                                <span class="badge bg-secondary opacity-75">Haskell</span>
+                                <span class="badge bg-secondary opacity-75">Algoritmos</span>
+                            </div>
+                            <a href="https://github.com/emiliamolo/lcc"
+                                class="text-info text-decoration-none fw-bold">Ver
+                                Todo →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="container py-5">
+            <h2 class="mb-5 font-mono border-bottom pb-2">/habilidades_técnicas</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="text-info font-mono small mb-3">LENGUAJES</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-secondary opacity-75">Python</span>
+                        <span class="badge bg-secondary opacity-75">Haskell</span>
+                        <span class="badge bg-secondary opacity-75">C / C++</span>
+                        <span class="badge bg-secondary opacity-75">JavaScript</span>
+                        <span class="badge bg-secondary opacity-75">SQL</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-info font-mono small mb-3">TECNOLOGÍAS</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-secondary opacity-75">Flask / Django</span>
+                        <span class="badge bg-secondary opacity-75">SQLite / PostgreSQL</span>
+                        <span class="badge bg-secondary opacity-75">Git / GitHub</span>
+                        <span class="badge bg-secondary opacity-75">Docker</span>
+                        <span class="badge bg-secondary opacity-75">Linux</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-info font-mono small mb-3">TEORÍA</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-secondary opacity-75">Algoritmos & Estructuras</span>
+                        <span class="badge bg-secondary opacity-75">Programación Funcional</span>
+                        <span class="badge bg-secondary opacity-75">Teoría de Autómatas</span>
+                        <span class="badge bg-secondary opacity-75">Lógica</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-5 mt-5"
+            style="background-color: rgba(0, 0, 0, 0.2); border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="container">
+                <h2 class="mb-5 font-mono border-bottom pb-2">/contacto</h2>
+
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <span class="d-block text-info font-mono small text-uppercase mb-2">EMAIL</span>
+                        <a href="mailto:emiliamoloeznik@gmail.com" class="fs-5 text-decoration-none text-white fw-bold">
+                            emiliamoloeznik@gmail.com
+                        </a>
+                        <p class="mt-3 opacity-50 small">© 2026 Emilia Moloeznik — Rosario, Argentina</p>
+                    </div>
+
+                    <div class="col-md-6 text-md-end">
+                        <div class="d-flex justify-content-md-end gap-5">
+                            <a href="https://github.com/emiliamolo" target="_blank"
+                                class="text-white text-decoration-none opacity-75 hover-opacity-100">
+                                <div class="text-center">
+                                    <i class="bi bi-github fs-2"></i>
+                                    <span class="d-block font-mono small mt-1">GitHub</span>
+                                </div>
+                            </a>
+                            <a href="https://linkedin.com/in/emilia-moloeznik" target="_blank"
+                                class="text-white text-decoration-none opacity-75 hover-opacity-100">
+                                <div class="text-center">
+                                    <i class="bi bi-linkedin fs-2"></i>
+                                    <span class="d-block font-mono small mt-1">LinkedIn</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="boids.js"></script>
+</body>
+
+</html>

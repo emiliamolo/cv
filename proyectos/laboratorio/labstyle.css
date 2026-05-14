@@ -1,0 +1,77 @@
+/* --- LABORATORIO ESTRUCTURA --- */
+
+/* Contenedor principal para evitar scroll doble */
+.container-fluid, .row {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar responsivo */
+.sidebar {
+    background: var(--bg-sidebar);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Main content: Flexbox para que el iframe crezca */
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* El contenedor del juego debe expandirse */
+.game-viewport {
+    flex-grow: 1; /* Toma todo el espacio sobrante */
+    margin-bottom: 20px;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* --- AJUSTES PARA CELULAR (Media Queries) --- */
+@media (max-width: 768px) {
+    /* 1. Forzamos que el contenedor principal permita el flujo */
+    .container-fluid, .row {
+        height: auto !important;
+        overflow: visible !important;
+        display: block !important; /* Desactivamos flexbox si da problemas */
+    }
+
+    /* 2. El área del juego DEBE tener una altura mínima real */
+    .game-viewport {
+        display: block !important;
+        width: 100% !important;
+        height: 60vh !important; /* Ocupa el 60% del alto de la pantalla */
+        min-height: 350px !important; /* Nunca menos de esto */
+        margin: 15px 0 !important;
+        position: relative !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* 3. El iframe debe llenar ese contenedor */
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        border: none;
+    }
+    
+    /* 4. Ocultamos cosas que ocupen espacio innecesario en mobile */
+    .sidebar h4, .text-end.text-white-50 {
+        display: none !important;
+    }
+}

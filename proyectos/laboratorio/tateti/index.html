@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ta Te Ti | Lab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<style>
+/* Contenedor del Ta-Te-Ti */
+.game-container-tateti {
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+}
+
+/* Grilla de 3x3 */
+.ttt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    aspect-ratio: 1 / 1;
+}
+
+/* Estilo de cada celda */
+.cell {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 8px;
+    font-size: 2.5rem;
+    font-family: 'Fira Code', monospace;
+    color: #38bdf8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell:hover {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+}
+
+/* Estilos para las marcas */
+.cell.x::before { content: "X"; color: #38bdf8; }
+.cell.o::before { content: "O"; color: #f472b6; } /* Un toque de rosa para la IA */
+
+.cell.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Ajustes mobile */
+@media (max-width: 992px) {
+    .game-container-tateti {
+        margin: 0 auto;
+    }
+}
+</style>
+<body>
+<main class="container py-4">
+    <header class="text-center mb-5">
+        <h1 class="display-4 fw-bold font-mono text-info">TA-TE-TI</h1>
+        <p class="lead opacity-75">Implementación de búsqueda exhaustiva mediante algoritmo Minimax.</p>
+    </header>
+
+    <div class="row g-5">
+        <div class="col-lg-5">
+            <div class="card rules-card border-0 p-4 mb-4" style="background: rgba(255, 255, 255, 0.05);">
+                <h3 class="h5 font-mono text-info">/logica_del_adversario</h3>
+                <ul class="mt-3 text-white">
+                    <li class="mb-2"><strong>Recursividad:</strong> El sistema evalúa todas las jugadas posibles hasta el fin del juego.</li>
+                    <li class="mb-2"><strong>Heurística:</strong> Victoria = +10, Derrota = -10, Empate = 0.</li>
+                    <li class="mb-2"><strong>Minimax:</strong> La IA elegirá siempre el movimiento que minimiza tu máxima ganancia posible.</li>
+                    <li><strong>Resultado:</strong> En el mejor de los casos, lograrás un empate.</li>
+                </ul>
+            </div>
+            
+            <div class="mb-4">
+                <h3 class="h5 font-mono">/sobre_el_proyecto</h3>
+                <p class="small opacity-50 text-justify">
+                    En teoría de juegos, 'minimax' es un método de decisión para minimizar la pérdida máxima esperada en juegos con adversario y con información perfecta. Minimax es un algoritmo recursivo.
+
+                    El funcionamiento de minimax puede resumirse en cómo elegir el mejor movimiento para ti mismo suponiendo que tu contrincante escogerá el peor para ti. 
+                </p>
+                <a href="https://es.wikipedia.org/wiki/Minimax" target="_blank" class="btn btn-sm btn-outline-secondary">
+                    <i class="bi bi-book"></i> Leer más en Wikipedia
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-7 d-flex justify-content-center align-items-start">
+            <div class="game-container-tateti">
+                <div id="board" class="ttt-grid">
+                    <button class="cell" data-index="0"></button>
+                    <button class="cell" data-index="1"></button>
+                    <button class="cell" data-index="2"></button>
+                    <button class="cell" data-index="3"></button>
+                    <button class="cell" data-index="4"></button>
+                    <button class="cell" data-index="5"></button>
+                    <button class="cell" data-index="6"></button>
+                    <button class="cell" data-index="7"></button>
+                    <button class="cell" data-index="8"></button>
+                </div>
+                
+                <div class="mt-4 d-flex justify-content-between align-items-center">
+                    <button id="reset-ttt" class="btn btn-outline-info font-mono btn-sm">
+                        <i class="bi bi-arrow-counterclockwise"></i> Reiniciar_Sistema
+                    </button>
+                    <div>
+                    <div class="turn-indicator font-mono small text-white-50">
+                        Turno: <span id="player-turn" class="text-info">USUARIO</span>
+                    </div>
+                    <div class="font-mono small text-white-50">
+                        <p class="font-mono mb-0 small">
+                            Estado: <span class="text-info" id="game-status">Esperando movimiento...</span>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="tateti.js"></script>
+</body>
+</html>
